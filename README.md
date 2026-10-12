@@ -86,3 +86,7 @@ Main results at *R*₀ = 3:
 Defriman Djafri, Faculty of Public Health, Universitas Andalas, Padang, Indonesia ([ORCID 0000-0002-2119-9616](https://orcid.org/0000-0002-2119-9616)). Correspondence: defrimandjafri@ph.unand.ac.id
 
 The code was written with the assistance of an AI tool (Claude, Anthropic), as disclosed in the manuscript. The author reviewed and verified all code and results.
+
+## Licence
+
+The code in this repository is released under the [MIT License](LICENSE). If you use it, please cite the article above.
