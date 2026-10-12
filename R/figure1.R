@@ -86,14 +86,14 @@ bar_y <- -2.75; bx0 <- ox + 0.2; bx1 <- ox + 5.8; sk <- function(p) bx0 + (bx1 -
 p <- ggplot() +
   # judul panel
   annotate("text", x = -5.2, y = 5.35, label = "A", family = f, fontface = "bold", size = 6, hjust = 0, colour = tinta) +
-  annotate("text", x = -4.75, y = 5.35, label = "Structure: triad, interdisciplinary ring, civilizational shell", family = f, size = 3.6, hjust = 0, colour = tinta) +
+  annotate("text", x = -4.75, y = 5.35, label = "Structure: triad, interdisciplinary ring, civilisational shell", family = f, size = 3.6, hjust = 0, colour = tinta) +
   annotate("text", x = ox - 0.3, y = 5.35, label = "B", family = f, fontface = "bold", size = 6, hjust = 0, colour = tinta) +
   annotate("text", x = ox + 0.15, y = 5.35, label = "From fractures to transmission", family = f, size = 3.6, hjust = 0, colour = tinta) +
   annotate("segment", x = ox - 0.75, xend = ox - 0.75, y = -4.9, yend = 5.1, colour = garis, linewidth = 0.4) +
   # cangkang
   geom_polygon(data = cangkang, aes(x, y, group = g), fill = cang, colour = NA) +
   geom_polygon(data = retak, aes(x, y, group = k, fill = k), colour = NA, alpha = 0.95) +
-  geom_text(data = teks_busur("CIVILIZATIONAL SHELL: SETTLEMENT / TRADE / INSTITUTIONS", 3.32, 90, 72),
+  geom_text(data = teks_busur("CIVILISATIONAL SHELL: SETTLEMENT / TRADE / INSTITUTIONS", 3.32, 90, 72),
             aes(x, y, label = ch, angle = rot), family = f, size = 2.15, colour = "#7d7468", fontface = "bold") +
   # cincin U
   geom_polygon(data = u_poly, aes(x, y, group = g, fill = I(u_w[g])), colour = "white", linewidth = 0.6) +
@@ -152,7 +152,7 @@ p <- ggplot() +
            lineheight = 0.9, fontface = "bold") +
   annotate("text", x = sk(c(0, 0.5, 1)), y = bar_y - 0.36, label = c("0%", "50%", "100%"), family = f, size = 2.1, colour = abu) +
   annotate("text", x = ox, y = -3.75, hjust = 0, vjust = 1, family = f, size = 2.3, colour = abu, lineheight = 1.05,
-           label = "Because the terms multiply, fractures compound: narrowing several\nfractures modestly can lower the reproduction number more than closing one completely.") +
+           label = "Because the terms multiply, fractures compound: narrowing several fractures together\nreaches the threshold with a smaller reduction in each (67% in one term or 31% in each of three).") +
   scale_fill_manual(values = fr, guide = "none") + scale_colour_manual(values = fr, guide = "none") +
   coord_equal(xlim = c(-5.3, 12.7), ylim = c(-4.95, 5.55), expand = FALSE, clip = "off") +
   theme_void(base_family = f) + theme(plot.margin = margin(10, 12, 8, 12), plot.background = element_rect(fill = "white", colour = NA))
