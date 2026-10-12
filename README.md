@@ -1,5 +1,7 @@
 # simpagebluk
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23311470.svg)](https://doi.org/10.5281/zenodo.23311470)
+
 R code for the figure and the illustrative simulation in
 
 > Djafri D. **The PAGEBLUK framework: an integrated epidemiological model of civilizational fractures.** Manuscript in preparation for *BMJ Global Health*.
@@ -86,6 +88,14 @@ Main results at *R*₀ = 3:
 Defriman Djafri, Faculty of Public Health, Universitas Andalas, Padang, Indonesia ([ORCID 0000-0002-2119-9616](https://orcid.org/0000-0002-2119-9616)). Correspondence: defrimandjafri@ph.unand.ac.id
 
 The code was written with the assistance of an AI tool (Claude, Anthropic), as disclosed in the manuscript. The author reviewed and verified all code and results.
+
+## How to cite
+
+If you use this code, please cite the article and the software:
+
+> Djafri D. *simpagebluk: code for the PAGEBLUK framework article* (version v1.0.0) [Software]. Zenodo; 2026. <https://doi.org/10.5281/zenodo.23311471>
+
+The DOI above refers to version v1.0.0, which reproduces the results reported in the article. The concept DOI [10.5281/zenodo.23311470](https://doi.org/10.5281/zenodo.23311470) always resolves to the latest version.
 
 ## Licence
 
