@@ -93,9 +93,9 @@ The code was written with the assistance of an AI tool (Claude, Anthropic), as d
 
 If you use this code, please cite the article and the software:
 
-> Djafri D. *simpagebluk: code for the PAGEBLUK framework article* (version v1.0.0) [Software]. Zenodo; 2026. <https://doi.org/10.5281/zenodo.23311471>
+> Djafri D. *simpagebluk: code for the PAGEBLUK framework article* (version v1.0.1) [Software]. Zenodo; 2026. <https://doi.org/10.5281/zenodo.23313623>
 
-The DOI above refers to version v1.0.0, which reproduces the results reported in the article. The concept DOI [10.5281/zenodo.23311470](https://doi.org/10.5281/zenodo.23311470) always resolves to the latest version.
+The DOI above refers to version v1.0.1, which reproduces the results reported in the article. The concept DOI [10.5281/zenodo.23311470](https://doi.org/10.5281/zenodo.23311470) always resolves to the latest version.
 
 ## Licence
 
