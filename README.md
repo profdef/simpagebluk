@@ -93,9 +93,19 @@ The code was written with the assistance of an AI tool (Claude, Anthropic), as d
 
 If you use this code, please cite the article and the software:
 
-> Djafri D. *simpagebluk: code for the PAGEBLUK framework article* (version v1.0.1) [Software]. Zenodo; 2026. <https://doi.org/10.5281/zenodo.23313623>
+> Djafri D. *simpagebluk: code for the PAGEBLUK framework article* [Software]. Zenodo; 2026. <https://doi.org/10.5281/zenodo.23311470>
 
-The DOI above refers to version v1.0.1, which reproduces the results reported in the article. The concept DOI [10.5281/zenodo.23311470](https://doi.org/10.5281/zenodo.23311470) always resolves to the latest version.
+This is the concept DOI, which always resolves to the latest release. Each release also has its own version DOI, listed on the [Zenodo record](https://doi.org/10.5281/zenodo.23311470); cite that DOI when you need to refer to an exact version.
+
+### Version history
+
+| Version | Changes |
+|---|---|
+| v1.0.0 | First release: Figure 1 and online supplementary material 1 (analyses S1–S4). |
+| v1.0.1 | Figure 1: British spelling throughout and corrected panel B note on proposition 2. Simulation code and results unchanged. |
+| v1.0.2 | README only: version-independent citation and this version history. Code and outputs identical to v1.0.1. |
+
+The figure and results reported in the article are produced by the code in v1.0.1 and every later release listed above.
 
 ## Licence
 
