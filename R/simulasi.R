@@ -1,4 +1,4 @@
-# Online supplementary material, "The PAGEBLUK framework" (BMJ Global Health)
+# Supplementary material, "The PAGEBLUK framework: an integrated epidemiological model of civilisational fractures"
 # Deterministic illustration of the fracture-to-parameter mapping:
 #   R_t = beta x c x D x S/N   (+ iota, importation, handled as an additive inflow per generation)
 # Run from the repository root:  Rscript R/simulasi.R
