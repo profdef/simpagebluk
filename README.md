@@ -4,7 +4,7 @@
 
 R code for the figure and the illustrative simulation in
 
-> Djafri D. **The PAGEBLUK framework: an integrated epidemiological model of civilisational fractures.** Manuscript submitted to the *Bulletin of the World Health Organization*.
+> Djafri D. **The PAGEBLUK framework: an integrated epidemiological model of civilisational fractures.**
 
 *Pagebluk* is the Javanese word for a deadly epidemic. In the PAGEBLUK framework, the classical epidemiological triad sits at the core: host (**P**, *pejamu*), agent (**A**, *agen*) and environment (**L**, *lingkungan*). Around it is a ring of interdisciplinary action and behavioural feedback (**U**, *upaya lintas-ilmu dan umpan balik*). In the outer layer, civilization opens four fractures:
 
