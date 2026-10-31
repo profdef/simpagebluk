@@ -109,7 +109,7 @@ This is the concept DOI, which always resolves to the latest release. Each relea
 | v1.0.0 | First release: Figure 1 and online supplementary material 1 (analyses S1–S4). |
 | v1.0.1 | Figure 1: British spelling throughout and corrected panel B note on proposition 2. Simulation code and results unchanged. |
 | v1.0.2 | README only: version-independent citation and this version history. Code and outputs identical to v1.0.1. |
-| v1.1.0 | Analysis S5 (scale of interaction) added to `simulasi.R`, with `S5-interaction-scale.csv`. Figure 1 panel B: importation (ι) shown as cases added, not as a term of *R~t~*. Results of S1–S4 and figure S1 unchanged. |
+| v1.1.0 ([10.5281/zenodo.23838999](https://doi.org/10.5281/zenodo.23838999)) | Analysis S5 (scale of interaction) added to `simulasi.R`, with `S5-interaction-scale.csv`. Figure 1 panel B: importation (ι) shown as cases added, not as a term of *R~t~*. Results of S1–S4 and figure S1 unchanged. |
 
 The figure and results reported in the current version of the article are produced by the code in v1.1.0 and later releases.
 
