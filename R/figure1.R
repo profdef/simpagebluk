@@ -1,4 +1,5 @@
-# Figure 1 for "The PAGEBLUK framework: an integrated epidemiological model of civilizational fractures"
+# Figure 1 for the PAGEBLUK framework article (civilisational fractures and the epidemiologic triad)
+# Imported cases (iota) are shown as cases added to local transmission, not as a term of R_t.
 # Panel A: structure (P-A-L core, U ring, civilizational shell with four fractures G, E, K, B).
 # Panel B: mapping of fractures onto R_t parameters and an illustration of proposition 4.
 # Run from the repository root:  Rscript R/figure1.R
@@ -68,12 +69,12 @@ lab_r$bx <- ifelse(lab_r$x < 0, lab_r$x - 0.42, lab_r$x + 0.42)
 
 ## Panel B ---------------------------------------------------------------------
 ox <- 6.6                                   # tepi kiri panel B
-eq <- data.frame(t = c("italic(R)[t]", "phantom() == phantom()", "beta", "phantom() %*% phantom()", "italic(c)", "phantom() %*% phantom()", "italic(D)", "phantom() %*% phantom()", "italic(S/N)", "phantom() + phantom()", "iota"),
+eq <- data.frame(t = c("italic(R)[t]", "phantom() == phantom()", "beta", "phantom() %*% phantom()", "italic(c)", "phantom() %*% phantom()", "italic(D)", "phantom() %*% phantom()", "italic(S/N)", "phantom()~~'|'~~phantom()", "'+'~iota"),
                  x = ox + c(0.25, 0.95, 1.55, 2.05, 2.5, 2.95, 3.4, 3.85, 4.45, 5.05, 5.5),
                  w = c(tinta, tinta, inti_w, abu, fr["E"], abu, fr["K"], abu, fr["K"], abu, fr["G"]))
 eq_y <- 3.55
 eq_lab <- data.frame(x = eq$x[c(3, 5, 7, 9, 11)], y = eq_y - 0.62,
-                     l = c("per-contact\ntransmission (A)", "contact\nrate", "infectious\nduration", "susceptible\nfraction", "importation"),
+                     l = c("per-contact\ntransmission (A)", "contact\nrate", "infectious\nduration", "susceptible\nfraction", "importation\n(cases added)"),
                      w = c(inti_w, fr["E"], fr["K"], fr["K"], fr["G"]))
 brk_y <- eq_y + 0.55
 baris <- data.frame(k = c("G", "E", "K", "B"), y = c(1.55, 0.75, -0.05, -0.85),

@@ -4,9 +4,9 @@
 
 R code for the figure and the illustrative simulation in
 
-> Djafri D. **The PAGEBLUK framework: an integrated epidemiological model of civilisational fractures.**
+> Djafri D. **Civilisational fractures and the epidemiologic triad: a conceptual framework linking social conditions to the reproduction number in infectious disease emergence.**
 
-*Pagebluk* is the Javanese word for a deadly epidemic. In the PAGEBLUK framework, the classical epidemiological triad sits at the core: host (**P**, *pejamu*), agent (**A**, *agen*) and environment (**L**, *lingkungan*). Around it is a ring of interdisciplinary action and behavioural feedback (**U**, *upaya lintas-ilmu dan umpan balik*). In the outer layer, civilization opens four fractures:
+*Pagebluk* is the Javanese word for a deadly epidemic. In the PAGEBLUK framework, the classical epidemiological triad sits at the core: host (**P**, *pejamu*), agent (**A**, *agen*) and environment (**L**, *lingkungan*). Around it is a ring of interdisciplinary action and behavioural feedback (**U**, *upaya lintas-ilmu dan umpan balik*). In the outer layer, civilisation opens four fractures:
 
 | Letter | Fracture | Main parameter of the reproduction number |
 |---|---|---|
@@ -17,14 +17,16 @@ R code for the figure and the illustrative simulation in
 
 The fractures are mapped onto
 
-$$R_t = \beta \times c \times D \times \frac{S}{N} \; (+\ \iota)$$
+$$R_t = \beta \times c \times D \times \frac{S}{N}$$
+
+Imported cases (ι) are added to locally generated cases (next-generation incidence = *R~t~ I* + ι); they are not a term of *R~t~*.
 
 ## Contents
 
 ```
 R/
   figure1.R     Figure 1: structure of the framework (panel A) and fracture-to-parameter mapping (panel B)
-  simulasi.R    Online supplementary material 1: deterministic illustration (analyses S1–S4, figure S1)
+  simulasi.R    Online supplemental appendix: deterministic illustration (analyses S1–S5, figure S1)
 output/         Files produced by the scripts (committed for convenience)
 ```
 
@@ -68,6 +70,7 @@ The simulation is deterministic and needs no data or random seed. All parameters
 | **S2** | Does information disorder act as a multiplier? (proposition 4) | Misinformation prevalence at which *R~t~* = 1, when it affects vaccination and distancing (`both`) or vaccination only (`vaccine only`) | `S2-misinformation-threshold.csv`, figure S1b |
 | **S3** | How does mobility interact with the other fractures? | Discrete generations, *I*~*g*+1~ = *R~t~ I~g~* + ι; equilibrium ι/(1 − *R~t~*) | `S3-importation-multiplier.csv`, figure S1c |
 | **S4** | How does inequity shape who dies? (proposition 3) | Final size relation *z* = *s*₀[1 − exp(−*R*₀*z*)], *s*₀ = 1 − ε*V*, with deaths = *z* × IFR | `S4-inequity-groups.csv`, figure S1d |
+| **S5** | On which scale should proposition 2 be tested? | Two fractures that each multiply *R* by 1.5 (*R* = 3, 2, 1.33); final attack rates from *z* = 1 − exp(−*Rz*) | `S5-interaction-scale.csv` |
 
 Main results at *R*₀ = 3:
 
@@ -75,6 +78,7 @@ Main results at *R*₀ = 3:
 - **S2.** *R~t~* returns above 1 at 22% misinformation prevalence when both measures are affected, against 27% when only vaccination is affected (*r* = 1).
 - **S3.** Each imported case yields 20 cases per generation at *R~t~* = 0.95.
 - **S4.** The two groups suffer 495 *v* 35 deaths per 100 000.
+- **S5.** Attack rates of 94.0%, 79.7% and 45.4%: closing one fracture multiplies the attack rate by 0.85, closing both by 0.48 rather than 0.72. Effects that are exactly multiplicative on *R* therefore appear to interact on the attack-rate scale (ratio 0.67), so proposition 2 should be tested on log *R~t~*, not on attack rates.
 
 `hasil-simulasi.rds` holds all results as an R list. Some variable and column names are in Indonesian: `jalur` = pathway, `mati` = deaths, `hasil` = results.
 
@@ -82,6 +86,7 @@ Main results at *R*₀ = 3:
 
 - Anderson RM, May RM. Population biology of infectious diseases: Part I. *Nature* 1979;280:361–7. <https://doi.org/10.1038/280361a0>
 - Ma J, Earn DJD. Generality of the final size formula for an epidemic of a newly invading infectious disease. *Bull Math Biol* 2006;68:679–702. <https://doi.org/10.1007/s11538-005-9047-7>
+- VanderWeele TJ, Knol MJ. A tutorial on interaction. *Epidemiol Methods* 2014;3:33–72. <https://doi.org/10.1515/em-2013-0005>
 
 ## Author
 
@@ -104,8 +109,9 @@ This is the concept DOI, which always resolves to the latest release. Each relea
 | v1.0.0 | First release: Figure 1 and online supplementary material 1 (analyses S1–S4). |
 | v1.0.1 | Figure 1: British spelling throughout and corrected panel B note on proposition 2. Simulation code and results unchanged. |
 | v1.0.2 | README only: version-independent citation and this version history. Code and outputs identical to v1.0.1. |
+| v1.1.0 | Analysis S5 (scale of interaction) added to `simulasi.R`, with `S5-interaction-scale.csv`. Figure 1 panel B: importation (ι) shown as cases added, not as a term of *R~t~*. Results of S1–S4 and figure S1 unchanged. |
 
-The figure and results reported in the article are produced by the code in v1.0.1 and every later release listed above.
+The figure and results reported in the current version of the article are produced by the code in v1.1.0 and later releases.
 
 ## Licence
 

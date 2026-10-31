@@ -1,8 +1,8 @@
-# Supplementary material, "The PAGEBLUK framework: an integrated epidemiological model of civilisational fractures"
+# Online supplemental appendix of the PAGEBLUK framework article (analyses S1-S5)
 # Deterministic illustration of the fracture-to-parameter mapping:
-#   R_t = beta x c x D x S/N   (+ iota, importation, handled as an additive inflow per generation)
+#   R_t = beta x c x D x S/N; importation (iota) is an additive inflow of cases per generation, not a term of R_t
 # Run from the repository root:  Rscript R/simulasi.R
-# All parameter values are illustrative and listed in table S1 of the supplement.
+# All parameter values are illustrative and listed in Appendix Table 2 of the supplement.
 suppressPackageStartupMessages({ library(ggplot2); library(patchwork) })
 out <- "output"; dir.create(out, showWarnings = FALSE)
 
@@ -108,6 +108,20 @@ pd <- ggplot(d4, aes(100 * V, mati, colour = factor(ifr))) +
        subtitle = "Final epidemic size by vaccine coverage, R0 = 3",
        x = "Vaccine coverage in the group (%)", y = "Deaths per 100 000") + tema
 
+## S5. Proposition 2: the scale on which multiplicativity holds ---------------
+# Two fractures each multiply R by 1.5: R = 3 with both open, 2 with one closed, 3 / 1.5^2 with both closed.
+# The effects are exactly multiplicative on R. Final attack rates (fully susceptible population) show
+# an apparent interaction, because the final size relation z = 1 - exp(-R z) is non-linear in R.
+fz <- function(R) if (R <= 1) 0 else uniroot(function(z) z - (1 - exp(-R * z)), c(1e-9, 1), tol = 1e-12)$root
+d5 <- data.frame(scenario = c("both fractures open", "one fracture closed", "both fractures closed"),
+                 R = c(3, 2, 3 / 1.5^2))
+d5$attack_rate <- sapply(d5$R, fz)
+rr_one <- d5$attack_rate[2] / d5$attack_rate[1]; rr_joint <- d5$attack_rate[3] / d5$attack_rate[1]
+hasil$S5 <- list(table = transform(d5, R = round(R, 2), attack_rate = round(100 * attack_rate, 1)),
+                 rr_one = round(rr_one, 2), rr_joint = round(rr_joint, 2),
+                 rr_joint_if_multiplicative = round(rr_one^2, 2),
+                 interaction_ratio = round(rr_joint / rr_one^2, 2))
+
 ## Gabung dan simpan -----------------------------------------------------------
 g <- (pa | pb) / (pc | pd) + plot_annotation(theme = theme(plot.background = element_rect(fill = "white", colour = NA)))
 ggsave(file.path(out, "figureS1-simulation.png"), g, width = 9.2, height = 8.6, dpi = 300, bg = "white", device = ragg::agg_png)
@@ -116,5 +130,6 @@ write.csv(hasil$S1, file.path(out, "S1-reduction-per-term.csv"), row.names = FAL
 write.csv(hasil$S2, file.path(out, "S2-misinformation-threshold.csv"), row.names = FALSE)
 write.csv(hasil$S3, file.path(out, "S3-importation-multiplier.csv"), row.names = FALSE)
 write.csv(hasil$S4, file.path(out, "S4-inequity-groups.csv"), row.names = FALSE)
+write.csv(hasil$S5$table, file.path(out, "S5-interaction-scale.csv"), row.names = FALSE)
 print(hasil)
 cat("Simulasi selesai.\n")
